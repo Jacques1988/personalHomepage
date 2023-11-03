@@ -21,7 +21,7 @@
 
     </ul>
 
-    <div class="menu-btn">
+    <div (click)="openResponsiveMenu()" class="menu-btn">
         <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
         </svg>
@@ -35,7 +35,32 @@
         </div>
         Kontakt
     </a>
-
-
-
 </mat-toolbar>
+
+
+<div id="responsive-menu" class="responsive-navigation">
+    <span (click)=" openResponsiveMenu()" class="responsive-navigation__close-btn close-btn">X</span>
+    <ul class="responsive-navigation__list-container">
+
+        <li class="responsive-navigation__list-container__list-element">
+            <a class="responsive-navigation__list-container__list-element__link" href="#">
+                Home
+            </a>
+        </li>
+        <li class="responsive-navigation__list-container__list-element">
+            <a class="responsive-navigation__list-container__list-element__link" href="#">
+                Über mich
+            </a>
+        </li>
+        <li class="responsive-navigation__list-container__list-element">
+            <a class="responsive-navigation__list-container__list-element__link" href="#">
+                Fähigkeiten
+            </a>
+        </li>
+        <li class="responsive-navigation__list-container__list-element">
+            <a class="responsive-navigation__list-container__list-element__link" href="#">
+                Projekte
+            </a>
+        </li>
+    </ul>
+</div>
