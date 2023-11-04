@@ -8,12 +8,14 @@ import { NavigationComponent } from './navigation/navigation.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
