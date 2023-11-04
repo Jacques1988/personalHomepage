@@ -2,13 +2,13 @@
 
 .header-section-main-container{
     display:flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items:space-between;
-    flex-direction:column;
     height: calc(100vh - 64px);
-    background-image:linear-gradient(110deg, #331c52, #291c3a);
+    background-color:#331c52;
     position: relative;
     padding:0 200px;
+    
     
 
     &__left-container{
@@ -75,15 +75,60 @@
         justify-content: center;
         align-items:center;
         height: calc(100vh - 64px);
+        width:800px;
+        background-image:url('../../assets/img/JacquesLöhr.png');
+        background-size: contain;
+        background-position-x:right;
+        background-repeat: no-repeat;
         position:absolute;
         top:-100px;
         right:200px;
+        bottom:0;
+
+    }
+
+    &__bottom-technolgy-container{
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        position:absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        padding:24px 200px;
+        background-color:#291c3a;
+        z-index:10;
         
-        img {
-            object-fit:cover;
-            width:100%;
-            height:100%;
+
+        &__icon-container{
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            width:60px;
+            height:60px;
+            
+
+            img{
+                object-fit:cover;
+                width:100%; 
+            }
         }
     }
 
+   
+}
+
+.design-element{
+    position:absolute;
+    top:200px;
+    right:400px;
+    width:600px;
+    height:600px;
+    background-color:rgba(0,0,0,0.3);
+    transform:rotate(15deg);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+
+    
 }

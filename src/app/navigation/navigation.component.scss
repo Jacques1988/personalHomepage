@@ -42,6 +42,7 @@ mat-toolbar{
     font-weight:500;
     transition:all 0.225s ease-in-out;
     cursor: pointer;
+    z-index:100;
 
     @media screen and (max-width:1200px){
         margin:0;
