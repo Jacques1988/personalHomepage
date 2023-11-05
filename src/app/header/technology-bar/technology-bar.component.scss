@@ -10,6 +10,20 @@
     padding:24px 200px;
     background-color:#291c3a;
     z-index:10;
+
+    @media screen and (max-width:1500px){
+        padding:24px 120px;
+    }
+
+    @media screen and (max-width:900px){
+        flex-wrap:wrap;
+        padding:16px 80px;
+    }
+
+    @media screen and (max-width:600px){
+        padding:0 15px;
+        
+    }
     
 
     &__icon-container{
@@ -18,7 +32,11 @@
         align-items:center;
         width:60px;
         height:60px;
-        
+
+        @media screen and (max-width:900px){
+            margin:8px;
+            width:50px;
+        }
 
         img{
             object-fit:cover;

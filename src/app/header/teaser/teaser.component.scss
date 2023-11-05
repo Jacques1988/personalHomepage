@@ -3,8 +3,6 @@
     justify-content: center;
     align-items:flex-start;
     flex-direction: column;
-    
-    
 
     &__header-teaser{
         display:flex;
@@ -15,6 +13,15 @@
         font-size:96px;
         color: #331c52 ;
         text-shadow:-1px -1px #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+
+        @media screen and (max-width:1200px){
+            font-size:64px;
+            letter-spacing:5px;
+        }
+
+        @media screen and (max-width:450px){
+            font-size:42px;
+        }
     }
 
     &__greetings{
@@ -28,11 +35,32 @@
             padding:0;
             margin:24px 0;
 
+            @media screen and (max-width:1200px){
+                font-size:40px;
+            }
+
+            @media screen and (max-width:550px){
+                margin:8px 0;
+            }
+
+            @media screen and (max-width:450px){
+                font-size:30px;
+                margin:0;
+            }
+
             &__name{
                 color:#fff;
                 font-size:56px;
                 padding:0;
                 margin:24px 0;
+
+                @media screen and (max-width:1200px){
+                    font-size:40px;
+                }
+
+                @media screen and (max-width:450px){
+                    font-size:30px;
+                }
             }
         }   
     }
@@ -43,6 +71,15 @@
         letter-spacing: 3px;
         font-weight:300;
         margin:12px 0;
+
+        @media screen and (max-width:1200px){
+            font-size:24px;
+        }
+
+        @media screen and (max-width:550px){
+            margin-bottom:8px;
+            
+        }
     }
 
 
@@ -54,5 +91,8 @@
         width:120px;
         
 
+        @media screen and (max-width:500px){
+            display:none;
+        }
     }
 }
