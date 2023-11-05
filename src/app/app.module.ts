@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './header/header.component';
 import { TechnologyBarComponent } from './header/technology-bar/technology-bar.component';
+import { ProfileComponent } from './header/profile/profile.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { TechnologyBarComponent } from './header/technology-bar/technology-bar.c
     NavigationComponent,
     HeaderComponent,
     TechnologyBarComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
