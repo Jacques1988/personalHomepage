@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './header/header.component';
 import { TechnologyBarComponent } from './header/technology-bar/technology-bar.component';
 import { ProfileComponent } from './header/profile/profile.component';
+import { TeaserComponent } from './header/teaser/teaser.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ProfileComponent } from './header/profile/profile.component';
     HeaderComponent,
     TechnologyBarComponent,
     ProfileComponent,
+    TeaserComponent,
   ],
   imports: [
     BrowserModule,
