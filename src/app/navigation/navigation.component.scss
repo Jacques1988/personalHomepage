@@ -27,6 +27,7 @@ mat-toolbar{
     align-items: center;
     height:50px;
     width:130px;
+    z-index:100;
     
     img{
         object-fit:cover;
@@ -67,6 +68,7 @@ mat-toolbar{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    z-index:100;
 
     @media screen and (max-width:1200px){
         display:flex;

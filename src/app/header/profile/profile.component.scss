@@ -1,35 +1,20 @@
 .profile-container{
     display:flex;
     justify-content: center;
-    align-items:center;
+    align-items:flex-start;
+    position:absolute;
+    top:-30px;
+    right:200px;
+    bottom:0;
     
 
     &__profile{
-        height:600px;
+        height:calc(100vh - 64px);
         width:600px;
         background-image:url('../../../assets/img/JacquesLöhr.png');
-        background-size: cover;
+        background-size: contain;
         background-position-x:center;
-        background-position-y: 30px;
         background-repeat: no-repeat;
-        border-radius:50%;
-        background-color:rgba(0,0,0,0.2);
-        border:1px solid #8121D0;
-
-        @media screen and (max-width:1500px){
-            width:500px;
-            height:500px;
-        }
-
-        @media screen and (max-width:1200px){
-           width:400px;
-           height:400px;
-        }
-
-        @media screen and (max-width:550px){
-            width:300px;
-            height:300px;
-            
-        }
+       
     }
 }
