@@ -9,6 +9,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './header/header.component';
+import { TechnologyBarComponent } from './header/technology-bar/technology-bar.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
     AppComponent,
     NavigationComponent,
     HeaderComponent,
+    TechnologyBarComponent,
   ],
   imports: [
     BrowserModule,

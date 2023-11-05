@@ -87,33 +87,6 @@
 
     }
 
-    &__bottom-technolgy-container{
-        display:flex;
-        justify-content: space-between;
-        align-items:center;
-        position:absolute;
-        bottom:0;
-        left:0;
-        right:0;
-        padding:24px 200px;
-        background-color:#291c3a;
-        z-index:10;
-        
-
-        &__icon-container{
-            display:flex;
-            justify-content: center;
-            align-items:center;
-            width:60px;
-            height:60px;
-            
-
-            img{
-                object-fit:cover;
-                width:100%; 
-            }
-        }
-    }
 
    
 }
