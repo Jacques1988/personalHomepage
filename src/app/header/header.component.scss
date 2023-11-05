@@ -13,20 +13,6 @@
     @media screen and (max-width:880px){
         background-position-x: -200px;
     }
-    
-
-    &__overlay{
-        width:100vw;
-        height:100vh;
-        background-color:#331c52;
-        background-color:rgba(#331c52, 0.7);
-        position:absolute;
-        top:0;
-        left:0;
-        right:0;
-        bottom:0;
-        mix-blend-mode: multiply;
-    }
 
     &__content-container{
         display:flex;
@@ -36,6 +22,11 @@
         height:100%;
         padding:100px 0;
         z-index:10;
+
+        @media screen and (max-width:1050px){
+            flex-direction:column;
+            align-items: center;
+         }
 
         @media screen and (max-width:900px){
             justify-content: flex-start;

@@ -6,7 +6,18 @@
     top:-30px;
     right:200px;
     bottom:0;
-    
+
+    @media screen and (max-width:1500px){
+        right:120px;
+    }
+
+    @media screen and (max-width:1200px){
+        right:80px;
+    }
+
+    @media screen and (max-width:1050px){
+        position:unset;
+     }
 
     &__profile{
         height:calc(100vh - 64px);
@@ -16,5 +27,10 @@
         background-position-x:center;
         background-repeat: no-repeat;
        
+
+        @media screen and (max-width:1050px){
+           width:300px;
+           height:300px;
+        }
     }
 }
