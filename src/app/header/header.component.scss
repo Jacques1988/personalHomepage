@@ -3,29 +3,19 @@
 .header-section-main-container{
     display:flex;
     justify-content: space-between;
-    align-items:space-between;
-    height: calc(100vh - 64px);
-    background-color:#331c52;
-    position: relative;
-    padding:0 200px;
-    
-    
+    align-items:center;
+    flex-direction: column;
+    height:calc(100vh - 64px);
+    background-color: #331c52;
+    padding: 0 200px;
 
-    
+    &__content-container{
+        display:flex;
+        justify-content: space-between;
+        align-items:flex-start;
+        width:100%;
+        height:100%;
+        padding:100px 0;
 
-   
-
-
-   
-}
-
-.design-element{
-    position:absolute;
-    top:100px;
-    right:200px;
-    width:600px;
-    height:600px;
-    background-color:rgba(0,0,0,0.3);
-    transform:rotate(15deg);
-    border-radius:50%;
+    }
 }
