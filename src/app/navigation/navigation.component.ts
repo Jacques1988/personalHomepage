@@ -15,7 +15,7 @@ export class NavigationComponent {
 
     if (this.menuIsOpen) {
       responsiveMenu!.style.opacity = '1';
-      responsiveMenu!.style.zIndex = '10';
+      responsiveMenu!.style.zIndex = '1000';
     } else {
       responsiveMenu!.style.opacity = '0';
       responsiveMenu!.style.zIndex = '-100';
