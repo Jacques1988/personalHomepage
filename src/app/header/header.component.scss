@@ -120,15 +120,11 @@
 
 .design-element{
     position:absolute;
-    top:200px;
-    right:400px;
+    top:100px;
+    right:200px;
     width:600px;
     height:600px;
     background-color:rgba(0,0,0,0.3);
     transform:rotate(15deg);
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-
-    
+    border-radius:50%;
 }
