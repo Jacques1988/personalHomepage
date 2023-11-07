@@ -3,6 +3,12 @@
     justify-content: center;
     align-items:flex-start;
     flex-direction: column;
+    padding-top:100px;
+
+    @media screen and (max-width:450px){
+        padding-top:50px;
+    }
+    
 
     &__header-teaser{
         display:flex;
@@ -29,6 +35,10 @@
             font-size:56px;
             padding:0;
             margin:24px 0;
+
+            @media screen and (max-width:1500px){
+                font-size:48px;
+             }
 
             @media screen and (max-width:1050px){
                 font-size:30px;
