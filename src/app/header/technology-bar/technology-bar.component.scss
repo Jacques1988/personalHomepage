@@ -38,6 +38,10 @@
             width:50px;
         }
 
+        @media screen and (max-width:450px){
+            display:none;
+        }
+
         img{
             object-fit:cover;
             width:100%; 
