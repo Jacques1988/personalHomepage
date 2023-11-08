@@ -13,6 +13,7 @@ import { TechnologyBarComponent } from './header/technology-bar/technology-bar.c
 import { ProfileComponent } from './header/profile/profile.component';
 import { TeaserComponent } from './header/teaser/teaser.component';
 import { AboutComponent } from './about/about.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { AboutComponent } from './about/about.component';
     ProfileComponent,
     TeaserComponent,
     AboutComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,

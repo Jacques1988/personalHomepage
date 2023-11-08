@@ -1,0 +1,22 @@
+
+
+.content-container{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    width:100%;
+}
+
+.project-container{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width:800px;
+    overflow:hidden;
+    border:3px solid blue;
+
+
+    @media screen and (max-width:1550px){
+
+    }
+}

@@ -1,0 +1,20 @@
+<div class="section-container">
+    <h2 class="section-teaser">Projekte</h2>
+    <div class="content-container">
+        <div (click)="onClickBackward()" class="chevron-container">
+            <svg fill="#331c52" xmlns="http://www.w3.org/2000/svg" height="64" viewBox="0 -960 960 960" width="64">
+                <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
+            </svg>
+        </div>
+        <div class="project-container">
+            <img src="{{projectImages[currentImage]}}" alt="">
+        </div>
+        <div (click)="onClickForward()" class="chevron-container">
+            <svg fill="#331c52" xmlns="http://www.w3.org/2000/svg" height="64" viewBox="0 -960 960 960" width="64">
+                <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+            </svg>
+        </div>
+
+
+    </div>
+</div>
