@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { TechnologyBarComponent } from './header/technology-bar/technology-bar.component';
 import { ProfileComponent } from './header/profile/profile.component';
 import { TeaserComponent } from './header/teaser/teaser.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { TeaserComponent } from './header/teaser/teaser.component';
     TechnologyBarComponent,
     ProfileComponent,
     TeaserComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

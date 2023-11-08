@@ -1,0 +1,27 @@
+
+.section-container{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+    padding:100px 200px 0 200px;
+    background-color:#e1ebed;
+
+
+    @media  screen and (max-width:1500px) {
+        padding:70px 120px 0px 120px;
+    }
+
+    @media screen and (max-width:1200px){
+        padding:70px 80px 0 80px;
+    }
+
+    @media screen and (max-width:600px){
+        padding:70px 15px 0 15px;
+    }
+}
+
+.section-teaser{
+    color:#291c3a;
+    font-size:48px;
+}
