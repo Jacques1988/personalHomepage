@@ -39,6 +39,10 @@ input{
     }
 }
 
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
 textarea{
     margin:8px;
     width:100%;
@@ -48,4 +52,8 @@ textarea{
     padding:8px;
     font-family: 'roboto';
     
+}
+
+textarea.ng-invalid.ng-touched{
+    border:1px solid red;
 }

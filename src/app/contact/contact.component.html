@@ -1,21 +1,26 @@
 <div class="section-container section-container--contact">
     <h1 id="contact" class="section-teaser dark-teaser">Kontakt</h1>
     <div class="content-container">
-        <form>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <h3 class="dark-teaser">Mail an mich schreiben und eine schnelle Antwort erhalten. So einfach ist das</h3>
             <div class="input-container">
-                <input placeholder="Dein Name" name="name" type="text">
-                <input placeholder="Telefon" name="phone" type="text">
+                <input placeholder="Dein Name" name="name" type="text" formControlName="userName">
+                <input placeholder="Telefon" name="phone" type="text" formControlName="userPhone">
             </div>
+            <span class="warn-text" *ngIf="!contactForm.get('userName')?.valid && contactForm.get('userName')!.touched">Bitte einen Namen eingeben</span>
+            <span class="warn-text" *ngIf="!contactForm.get('userPhone')?.valid && contactForm.get('userPhone')!.touched">Bitte eine Telefonnummer eingeben</span>
 
             <div class="input-container">
-                <input placeholder="Email" name="email" type="text">
-                <input placeholder="Betreff" name="subject" type="text">
+                <input placeholder="Email" name="email" type="text" formControlName="userEmail">
+                <input placeholder="Betreff" name="subject" type="text" formControlName="userSubject">
             </div>
+            <span class="warn-text" *ngIf="!contactForm.get('userEmail')?.valid && contactForm.get('userEmail')!.touched">Bitte eine Emailadresse eingeben</span>
+            <span class="warn-text" *ngIf="!contactForm.get('userSubject')?.valid && contactForm.get('userSubject')!.touched">Bitte einen Betreff eingeben</span>
             <div class="input-container">
-                <textarea placeholder="Deine Nachricht" name="message"></textarea>
+                <textarea placeholder="Deine Nachricht" name="message" formControlName="userMessage"></textarea>
             </div>
-            <button class="btn" type="submit">Absenden</button>
+            <span class="warn-text" *ngIf="!contactForm.get('userMessage')?.valid && contactForm.get('userMessage')!.touched">Bitte achte darauf keine verbotenen Zeichen zu schreiben</span>
+            <button [disabled]="!contactForm.valid" class="btn" type="submit">Absenden</button>
         </form>
     </div>
 </div>
