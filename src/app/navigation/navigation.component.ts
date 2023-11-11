@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -7,7 +7,13 @@ import { Component } from '@angular/core';
 })
 export class NavigationComponent {
   menuIsOpen: boolean = false;
+  scrollOptions: {} = {
+    behavior: 'smooth',
+    block: 'start',
+    inline: 'nearest'
+  }
 
+  constructor(private scroller: ViewportScroller) { }
 
   openResponsiveMenu() {
     this.menuIsOpen = !this.menuIsOpen;
@@ -20,7 +26,22 @@ export class NavigationComponent {
       responsiveMenu!.style.opacity = '0';
       responsiveMenu!.style.zIndex = '-100';
     }
+  }
 
-    console.log(this.menuIsOpen)
+
+  scrollToAboutSection() {
+    document.getElementById('about-section')!.scrollIntoView(this.scrollOptions);
+  }
+
+  scrollToSkillsSection() {
+    document.getElementById('skills')!.scrollIntoView(this.scrollOptions);
+  }
+
+  scrollToProjectSection() {
+    document.getElementById('projects')!.scrollIntoView(this.scrollOptions);
+  }
+
+  scrollToContactSection() {
+    document.getElementById('contact')!.scrollIntoView(this.scrollOptions);
   }
 }
