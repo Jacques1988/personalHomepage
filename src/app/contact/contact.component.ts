@@ -21,5 +21,6 @@ export class ContactComponent {
 
   onSubmit() {
     console.log(this.contactForm.value)
+    //als nächstes den Service bauen der Das JSON umwandelt und an das Backend sendet (PHP)
   }
 }
