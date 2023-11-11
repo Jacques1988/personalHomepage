@@ -39,19 +39,8 @@ mat-toolbar{
 
 
 .nav-btn{
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
     margin-left:96px;
-    background-color:#fff;
-    color:#8121D0;
     width:90px;
-    padding:4px 16px;
-    border-radius:8px;
-    font-size:16px;
-    font-weight:500;
-    transition:all 0.225s ease-in-out;
-    cursor: pointer;
     z-index:100;
 
     @media screen and (max-width:1200px){
@@ -136,8 +125,6 @@ mat-toolbar{
         display:none;
     }
 }
-
-
 
 .responsive-navigation{
     display:flex;

@@ -14,6 +14,7 @@ import { ProfileComponent } from './header/profile/profile.component';
 import { TeaserComponent } from './header/teaser/teaser.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ProjectsComponent } from './projects/projects.component';
     TeaserComponent,
     AboutComponent,
     ProjectsComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

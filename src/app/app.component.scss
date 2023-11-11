@@ -25,3 +25,22 @@
     color:#291c3a;
     font-size:48px;
 }
+
+.dark-teaser{
+    color:#dccfed;
+}
+
+.btn{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    background-color:#fff;
+    color:#8121D0;
+    
+    padding:4px 16px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:500;
+    transition:all 0.225s ease-in-out;
+    cursor: pointer;
+}
