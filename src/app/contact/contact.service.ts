@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContactService {
-  url: string = 'https://bluewave-tech.de/contact.php';
+  url: string = 'https://bluewave-tech.de/sendMail.php';
 
   constructor(private httpClient: HttpClient) { }
 

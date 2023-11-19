@@ -22,6 +22,9 @@ export class ContactComponent {
 
 
   onSubmit() {
-    this.contactService.sendAnEmail(this.contactForm.value).subscribe((response: any) => { console.log('gesendet') })
+    let contactformContainer = document.getElementById('contactform-container');
+    this.contactService.sendAnEmail(this.contactForm.value).subscribe((response: any) => {
+      contactformContainer!.innerHTML = `<div class="sendmail">Deine Nachricht wurde erfolgreich versendet! Vielen Dank.`;
+    })
   }
 }
