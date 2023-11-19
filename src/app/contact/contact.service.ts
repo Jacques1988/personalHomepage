@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +8,10 @@ import { Injectable } from '@angular/core';
 export class ContactService {
   url: string = 'https://bluewave-tech.de/contact.php';
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  /* sendAnEmail(data: object) {
+  sendAnEmail(data: object): Observable<{}> {
     const headers = new HttpHeaders().append('Content-Type', 'application/JSON');
-    return this.httpClient.post<object>(this.url, data, { headers: headers })
-  } */
+    return this.httpClient.post<any>(this.url, data, { headers: headers })
+  }
 }

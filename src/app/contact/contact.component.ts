@@ -22,7 +22,6 @@ export class ContactComponent {
 
 
   onSubmit() {
-    console.log(this.contactForm.value)
-    /*  this.contactService.sendAnEmail(this.contactForm).subscribe() */
+    this.contactService.sendAnEmail(this.contactForm.value).subscribe((response: any) => { console.log('gesendet') })
   }
 }
