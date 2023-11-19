@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ContactService } from './contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,14 +14,15 @@ export class ContactComponent {
     'userEmail': new FormControl(null, [Validators.required, Validators.email]),
     'userSubject': new FormControl(null, [Validators.required, Validators.pattern(/^[a-zA-Z]/)]),
     'userMessage': new FormControl(null, [Validators.required, Validators.pattern(/^[a-zA-Z]/)]),
+    'datasec': new FormControl(null, Validators.required)
   })
 
-  constructor() { }
+  constructor(private contactService: ContactService) { }
 
 
 
   onSubmit() {
     console.log(this.contactForm.value)
-    //als nächstes den Service bauen der Das JSON umwandelt und an das Backend sendet (PHP)
+    /*  this.contactService.sendAnEmail(this.contactForm).subscribe() */
   }
 }

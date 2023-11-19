@@ -39,6 +39,11 @@ input{
     }
 }
 
+[type=checkbox]{
+    width:30px;
+    height:30px;
+}
+
 input.ng-invalid.ng-touched{
     border: 1px solid red;
 }

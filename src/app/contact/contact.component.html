@@ -19,7 +19,13 @@
             <div class="input-container">
                 <textarea placeholder="Deine Nachricht" name="message" formControlName="userMessage"></textarea>
             </div>
-            <span class="warn-text" *ngIf="!contactForm.get('userMessage')?.valid && contactForm.get('userMessage')!.touched">Bitte achte darauf keine verbotenen Zeichen zu schreiben</span>
+            <div class="input-container">
+                <input type="checkbox" formControlName="datasec">
+                <span style="padding-top:24px; padding-bottom:24px;" class="dark-teaser">Ich habe die Datenschutzrichtlinien gelesen und bin damit einverstanden das meine Daten zwecks der Kontaktaufnahme von Bluewave-Technologies verwendet werden.</span>
+            </div>
+            <span class="warn-text" *ngIf="!contactForm.get('datasec')?.valid &&contactForm.get('userMessage')?.touched">Bitte akzeptiere die Datenschutzrichtlinien</span>
+
+            <span class="warn-text" *ngIf="!contactForm.get('userMessage')?.valid && contactForm.get('userMessage')!.touched">Bitte überprüfe deine Nachricht</span>
             <button [disabled]="!contactForm.valid" class="btn" type="submit">Absenden</button>
         </form>
     </div>

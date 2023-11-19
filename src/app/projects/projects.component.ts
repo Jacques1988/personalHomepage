@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ProjectsComponent {
   projectImages: string[] = [
-    '../../assets/img/html.png',
-    '../../assets/img/css.png',
-    '../../assets/img/JavaScript.png',
+    '../../assets/img/ellen_tielmann.png',
+    '../../assets/img/tactical_airsoft.png',
+    '../../assets/img/suedstrandquartier.png',
   ]
   currentImage = 0;
 
