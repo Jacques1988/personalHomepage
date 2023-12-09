@@ -19,8 +19,6 @@ export class ContactComponent {
 
   constructor(private contactService: ContactService) { }
 
-
-
   onSubmit() {
     let contactformContainer = document.getElementById('contactform-container');
     this.contactService.sendAnEmail(this.contactForm.value).subscribe((response: any) => {

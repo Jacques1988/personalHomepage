@@ -1,47 +1,43 @@
+
 .profile-container{
     display:flex;
     justify-content: center;
-    align-items:flex-start;
-    position:absolute;
-    top:-30px;
-    right:200px;
-    bottom:0;
+    align-items:center;
+    background-image: url('../../../assets/img/JacquesLöhr.webp');
+    background-size:cover;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    width:500px;
+    height:500px;
+    border-radius: 50%;
+    overflow:hidden;
+    box-shadow:inset 10px 10px 30px #e1ebed;
+    animation-name:hover;
+    animation-iteration-count: infinite;
+    animation-duration:30s;
+    transition:all 5s linear;
+}
 
-    @media screen and (max-width:1500px){
-        right:80px;
+@keyframes hover {
+    0% {
+        transform: translate(0px, 0px);
     }
-
-    @media screen and (max-width:1200px){
-        right:80px;
+    20% {
+        transform: translate(10px, 15px);
     }
-
-    @media screen and (max-width:1050px){
-        position:unset;
-     }
-
-     
-
-    &__profile{
-        display:flex;
-        justify-content: center;
-        align-items:center;
-        height:calc(100vh - 64px);
-        width:600px;
-        background-image:url('../../../assets/img/JacquesLöhr.png');
-        background-size: contain;
-        background-position-x:center;
-        background-repeat: no-repeat;
-       
-
-        @media screen and (max-width:1050px){
-           width:500px;
-           height:500px;
-        }
-
-        @media screen and (max-width:600px){
-            width:330px;
-            height:330px;
-         }
-
+    20% {
+        transform: translate(20px, 30px);
+    }
+    40% {
+        transform: translate(30px, 30px);
+    }
+    60% {
+        transform: translate(20px, 30px);
+    }
+    80% {
+        transform: translate(10px, 15px);
+    }
+    100%{
+        transform:translate(0px, 0px);
     }
 }

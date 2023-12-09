@@ -44,3 +44,13 @@
     transition:all 0.225s ease-in-out;
     cursor: pointer;
 }
+
+.perspective-container{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    perspective: 2600px;
+    -webkit-perspective: 2600px;
+    transform-style: preserve-3d;
+    position:relative;
+}
