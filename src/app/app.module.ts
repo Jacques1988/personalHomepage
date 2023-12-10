@@ -18,7 +18,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { WelcomeTeaserComponent } from './header/teaser/welcome-teaser/welcome-teaser.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +32,6 @@ import { WelcomeTeaserComponent } from './header/teaser/welcome-teaser/welcome-t
     ProjectsComponent,
     ContactComponent,
     FooterComponent,
-    WelcomeTeaserComponent,
   ],
   imports: [
     BrowserModule,

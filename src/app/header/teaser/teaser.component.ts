@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { WelcomeTeaserComponent } from './welcome-teaser/welcome-teaser.component';
+import { WelcomeTeaser } from './welcome-teaser/settings';
+
 
 @Component({
   selector: 'app-teaser',
@@ -9,7 +10,7 @@ import { WelcomeTeaserComponent } from './welcome-teaser/welcome-teaser.componen
 export class TeaserComponent implements OnInit {
 
   ngOnInit(): void {
-    let welcomeHeader = new WelcomeTeaserComponent(document.querySelector('#canvas-teaser')!, document.querySelector('.teaser-container')!);
+    let welcomeHeader = new WelcomeTeaser(document.querySelector('#canvas-teaser')!, document.querySelector('.teaser-container')!);
   }
 
 
