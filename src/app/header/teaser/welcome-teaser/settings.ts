@@ -43,7 +43,7 @@ export class WelcomeTeaser {
   }
 
   loadFont() {
-    let textUrl = 'assets/fonts/helvetiker_regular.typeface.json'
+    let textUrl = 'assets/fonts/Spacewar_Regular.json'
     let textureLoader = new THREE.TextureLoader();
 
     this.fontLoader.load(
@@ -52,7 +52,7 @@ export class WelcomeTeaser {
         const text = new TextGeometry(
           'Hi, ich bin Jacques', {
           font: font,
-          size: 0.7,
+          size: 0.5,
           height: 0.15,
           curveSegments: 10,
           bevelEnabled: true,
@@ -81,7 +81,7 @@ export class WelcomeTeaser {
         const textTeaser = new TextGeometry(
           'Ich bin Webentwickler', {
           font: font,
-          size: 0.7,
+          size: 0.5,
           height: 0.15,
           curveSegments: 48,
           bevelEnabled: true,
