@@ -3,7 +3,6 @@ import { sizes } from './sizes';
 import { Teaser } from './teaser';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-
 export class WelcomeTeaser {
   renderer: THREE.WebGLRenderer;
   sizes: sizes;
@@ -14,6 +13,7 @@ export class WelcomeTeaser {
   sunLight = new THREE.PointLight(0xffffff, 1000)
   teaser: Teaser = new Teaser();
   controls: OrbitControls;
+
 
   constructor(private canvas: HTMLCanvasElement, private canvasContainer: HTMLElement) {
     this.canvas = canvas;
@@ -39,10 +39,11 @@ export class WelcomeTeaser {
     );
   }
 
+
   settings() {
     this.canvas.width = this.sizes.width;
     this.canvas.height = this.sizes.height;
-    this.camera.position.z = 5;
+    this.camera.position.z = 6.5;
     this.sunLight.position.set(10, 10, 10);
     this.renderer.setSize(
       this.sizes.width,
@@ -52,6 +53,7 @@ export class WelcomeTeaser {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.startScreen();
   }
+
 
   startScreen = () => {
     let elapsedTime = this.clock.getElapsedTime();

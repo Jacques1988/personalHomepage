@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ViewportScroller } from '@angular/common';
+
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -13,7 +13,7 @@ export class NavigationComponent {
     inline: 'nearest'
   }
 
-  constructor(private scroller: ViewportScroller) { }
+  constructor() { }
 
   openResponsiveMenu() {
     this.menuIsOpen = !this.menuIsOpen;

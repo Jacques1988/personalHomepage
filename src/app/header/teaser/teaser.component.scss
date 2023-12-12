@@ -3,85 +3,31 @@
     justify-content: center;
     align-items:center;
     width:900px;
-    height:600px;
-    
+    height:600px;    
+
+    @media screen and (max-width:1600px){
+        width:700px;
+        height:500px;
+    }
+
+    @media screen and (max-width:1150px){
+        width:800px;
+        height:600px;
+    }
+
+    @media screen and (max-width:800px){
+        width:500px;
+        height:300px;
+    }
+
+    @media screen and (max-width:500px){
+        width:330px;
+        height:330px;
+    }
+
+    @media screen and (max-width:400px){
+        width:300px;
+        height:300px;
+    }
+
 }
-
-
-
-
-/* .teaser-container{
-    display:flex;
-    justify-content: center;
-    align-items:flex-start;
-    flex-direction: column;
-    padding-top:100px;
-
-    @media screen and (max-width:450px){
-        padding-top:50px;
-    }
-    
-
-    &__header-teaser{
-        display:flex;
-        justify-content: center;
-        align-items:center;
-        margin:0;
-        padding:0;
-        font-size:96px;
-        color: #331C52;
-        text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px #fff, 1px -1px 0 #fff;
-
-        @media screen and (max-width:1050px){
-           font-size: 64px;;
-         }
-    }
-
-    &__greetings{
-        display:flex;
-        justify-content: center;
-        align-items:center;
-        
-        &__teaser{
-            color:#fff;
-            font-size:56px;
-            padding:0;
-            margin:24px 0;
-
-            @media screen and (max-width:1500px){
-                font-size:48px;
-             }
-
-            @media screen and (max-width:1050px){
-                font-size:30px;
-             }
-
-
-            &__name{
-                color:#fff;
-                font-size:56px;
-                padding:0;
-                margin:24px 0;
-
-                @media screen and (max-width:1050px){
-                    font-size:30px;
-                 }
-            }
-        }   
-    }
-
-    &__description{
-        color:#fff;
-        font-size:36px;
-        letter-spacing: 3px;
-        font-weight:300;
-        
-
-        @media screen and (max-width:1050px){
-            font-size:24px;
-         }
-
-       
-    }
-
-} */

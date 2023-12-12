@@ -1,5 +1,4 @@
 
-/* #331c52 */
 .header-section-main-container{
     display:flex;
     justify-content: space-between;
@@ -24,7 +23,7 @@
         height:100%;
         padding:100px 0 0 0;
 
-        @media screen and (max-width:1050px){
+        @media screen and (max-width:1150px){
             flex-direction:column;
             align-items: center;
             padding-top:0;
