@@ -3,42 +3,71 @@ import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 
 export class Teaser {
-    fontLoader = new FontLoader();
+    fontLoader: FontLoader = new FontLoader();
+    fontUrl: string = 'assets/fonts/Spacewar_Regular.json';
     teaser: any;
-    /* cube: any; */
 
-    buildTeaser() {
+
+    loadFont(scene: THREE.Scene) {
+        let textureLoader = new THREE.TextureLoader();
+
+        //loads first sentence with name
         this.fontLoader.load(
-            '/assets/fonts/helvetiker_regular.typeface.json',
-            (font) => {
-                let textGeometry = new TextGeometry(
-                    'Hi, ich bin Jacques',
-                    {
-                        font: font,
-                        size: 0.5,
-                        height: 0.2,
-                        curveSegments: 12,
-                        bevelEnabled: true,
-                        bevelThickness: 0.03,
-                        bevelSize: 0.02,
-                        bevelOffset: 0,
-                        bevelSegments: 5,
-                    }
+            this.fontUrl,
+            (font: any) => {
+                const text = new TextGeometry(
+                    'Hi, ich bin Jacques', {
+                    font: font,
+                    size: 0.5,
+                    height: 0.15,
+                    curveSegments: 10,
+                    bevelEnabled: true,
+                    bevelThickness: 0.015,
+                    bevelSize: 0.03,
+                    bevelOffset: 0,
+                    bevelSegments: 10
+                }
                 );
-                let textMaterial = new THREE.MeshBasicMaterial()
-                let teaserMesh = new THREE.Mesh(textGeometry, textMaterial);
-                let teaser = teaserMesh;
-                console.log(teaser)
-                return teaser;
+                text.center();
+                let matcapTexture = textureLoader.load('assets/img/violet.png');
+                let textMaterial = new THREE.MeshMatcapMaterial({
+                    matcap: matcapTexture,
+                    flatShading: true,
+                });
+                let teaser = new THREE.Mesh(text, textMaterial);
+                teaser.position.y = 2;
+                scene.add(teaser);
             }
         );
 
-        /* let boxGeometry = new THREE.BoxGeometry(1, 1, 1, 100, 100);
-        let boxMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        let cube = new THREE.Mesh(boxGeometry, boxMaterial);
-        this.cube = cube;
-        return this.cube; */
+        //loads what i am
+        this.fontLoader.load(
+            this.fontUrl,
+            (font: any) => {
+                const textTeaser = new TextGeometry(
+                    'Ich bin Webentwickler', {
+                    font: font,
+                    size: 0.5,
+                    height: 0.15,
+                    curveSegments: 48,
+                    bevelEnabled: true,
+                    bevelThickness: 0.015,
+                    bevelSize: 0.03,
+                    bevelOffset: 0,
+                    bevelSegments: 10
+                }
+                );
+                textTeaser.center();
+                let matcapTexture = textureLoader.load('assets/img/violet.png');
+                let textMaterial = new THREE.MeshMatcapMaterial({
+                    matcap: matcapTexture,
+                    flatShading: true,
+                });
+                let secondText = new THREE.Mesh(textTeaser, textMaterial);
+
+                scene.add(secondText);
+            }
+        )
+
     }
-
-
 }
