@@ -12,6 +12,4 @@ export class TeaserComponent implements OnInit {
   ngOnInit(): void {
     let welcomeHeader = new WelcomeTeaser(document.querySelector('#canvas-teaser')!, document.querySelector('.teaser-container')!);
   }
-
-
 }

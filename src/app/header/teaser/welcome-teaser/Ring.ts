@@ -1,10 +1,23 @@
-import * as THREE from 'three';
+import { TorusGeometry, MeshStandardMaterial, Mesh, NearestFilter, RepeatWrapping } from 'three';
+import { Teaser } from './Teaser';
+import { Frame } from './Frame';
 
 
 export class Ring {
-    ringGeometry: THREE.TorusGeometry = new THREE.TorusGeometry(5, 0.2, 100, 100,);
-    ringMaterial = new THREE.MeshStandardMaterial();
-    ringMesh = new THREE.Mesh(this.ringGeometry, this.ringMaterial);
+    ringGeometry: THREE.TorusGeometry = new TorusGeometry(5, 0.2, 100, 100,);
+    ringMaterial = new MeshStandardMaterial();
+    ringMesh = new Mesh(this.ringGeometry, this.ringMaterial);
+    scene: THREE.Scene;
+    teaser = new Teaser();
+    frame = new Frame();
+    imageFrame: any;
+
+    constructor(scene: THREE.Scene, image: any) {
+        this.scene = scene;
+        this.teaser.loadFont(this.scene);
+        this.imageFrame = this.frame.buildImageFrame(image);
+        this.scene.add(this.imageFrame)
+    }
 
     buildRing(surface: any) {
 
@@ -18,17 +31,16 @@ export class Ring {
         this.ringMaterial.normalMap = surface[4];
         this.ringMaterial.roughnessMap = surface[5];
         this.ringMaterial.roughness = 2;
+
         this.ringMesh.position.y = 1;
 
         for (let i = 0; i < surface.length; i++) {
-            surface[i].magFilter = THREE.NearestFilter;
-            surface[i].wrapS = THREE.RepeatWrapping;
-            surface[i].wrapT = THREE.RepeatWrapping;
+            surface[i].magFilter = NearestFilter;
+            surface[i].wrapS = RepeatWrapping;
+            surface[i].wrapT = RepeatWrapping;
             surface[i].repeat.set(10, 1);
         }
 
-
         return this.ringMesh;
     }
-
 }

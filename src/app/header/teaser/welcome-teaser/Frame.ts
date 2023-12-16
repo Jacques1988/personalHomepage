@@ -13,7 +13,12 @@ export class Frame {
 
     buildImageFrame(image: any) {
         this.frameMaterial.map = image;
-        this.frame.position.y = 2.75;
+        if (window.innerWidth < 500) {
+            this.frame.position.y = 4;
+        } else {
+            this.frame.position.y = 2.75;
+        }
+
         return this.frame;
     }
 

@@ -1,8 +1,6 @@
-import * as THREE from 'three';
+import { Scene, DirectionalLight, PerspectiveCamera, WebGLRenderer, } from 'three'
 import { sizes } from './sizes';
-import { Teaser } from './Teaser';
 import { Ring } from './Ring';
-import { Frame } from './Frame';
 import { StyleLoader } from './StyleLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
@@ -11,19 +9,16 @@ export class WelcomeTeaser {
   renderer: THREE.WebGLRenderer;
   sizes: sizes;
   camera: THREE.PerspectiveCamera;
-  scene: THREE.Scene = new THREE.Scene();
-  clock: THREE.Clock = new THREE.Clock();
-  sunLight = new THREE.DirectionalLight(0xffffff, 2)
-  teaser: Teaser = new Teaser();
-  ring: Ring = new Ring();
-  ringSurface: string[] = this.styleLoader.loadRingTextures();
-  profileImageFrame = new Frame();
+  scene: THREE.Scene = new Scene();
   profileImage: any = this.styleLoader.loadProfileImage();
-
+  sunLight = new DirectionalLight(0xffffff, 2)
+  ringComponent: Ring = new Ring(this.scene, this.profileImage);
+  ringSurface: string[] = this.styleLoader.loadRingTextures();
+  ring = this.ringComponent.buildRing(this.ringSurface);
   controls: OrbitControls;
 
-
   constructor(private canvas: HTMLCanvasElement, private canvasContainer: HTMLElement) {
+
     this.canvas = canvas;
     this.canvasContainer = canvasContainer;
     this.sizes = {
@@ -31,28 +26,31 @@ export class WelcomeTeaser {
       height: this.canvasContainer.clientHeight,
       aspect: this.canvasContainer.clientWidth / this.canvasContainer.clientHeight,
     }
-    this.camera = new THREE.PerspectiveCamera(75, this.sizes.aspect, 0.01, 1000);
-    this.renderer = new THREE.WebGLRenderer({
+    this.camera = new PerspectiveCamera(75, this.sizes.aspect, 0.01, 1000);
+    this.renderer = new WebGLRenderer({
       canvas: this.canvas,
       alpha: true,
     });
-    this.controls = new OrbitControls(this.camera, this.canvas)
+    this.controls = new OrbitControls(this.camera, this.canvas);
 
-    this.teaser.loadFont(this.scene);
     this.settings();
     this.scene.add(
       this.camera,
       this.sunLight,
-      this.ring.buildRing(this.ringSurface),
-      this.profileImageFrame.buildImageFrame(this.profileImage)
+      this.ring,
     );
   }
 
-
   settings() {
+
+    if (window.innerWidth < 500) {
+      this.camera.position.z = 15;
+      this.ring.position.y = 3;
+    } else {
+      this.camera.position.z = 10;
+    }
     this.canvas.width = this.sizes.width;
     this.canvas.height = this.sizes.height;
-    this.camera.position.z = 10;
     this.sunLight.position.set(0, 2, 5);
     this.renderer.setSize(
       this.sizes.width,
@@ -63,22 +61,8 @@ export class WelcomeTeaser {
     this.startScreen();
   }
 
-
   startScreen = () => {
-    let elapsedTime = this.clock.getElapsedTime();
-
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(this.startScreen)
   }
 }
-
-
-
-
-
-
-
-
-/* buildTeaser() {
-    
-  } */

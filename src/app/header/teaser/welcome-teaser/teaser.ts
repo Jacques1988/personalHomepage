@@ -1,6 +1,5 @@
-import * as THREE from 'three';
+import { TextureLoader, MeshMatcapMaterial, Mesh } from 'three';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
-import { StyleLoader } from './StyleLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 
 export class Teaser {
@@ -8,9 +7,8 @@ export class Teaser {
     fontUrl: string = 'assets/fonts/Spacewar_Regular.json';
     teaser: any;
 
-
     loadFont(scene: THREE.Scene) {
-        let textureLoader = new THREE.TextureLoader();
+        let textureLoader = new TextureLoader();
 
         //loads first sentence with name
         this.fontLoader.load(
@@ -31,12 +29,12 @@ export class Teaser {
                 );
                 text.center();
                 let matcapTexture = textureLoader.load('assets/img/darkPurple2.png');
-                let textMaterial = new THREE.MeshMatcapMaterial({
+                let textMaterial = new MeshMatcapMaterial({
                     matcap: matcapTexture,
                     flatShading: true,
                 });
-                let teaser = new THREE.Mesh(text, textMaterial);
-                teaser.position.y = -1;
+                let teaser = new Mesh(text, textMaterial);
+                window.innerWidth < 500 ? teaser.position.y = 1 : teaser.position.y = -1;
                 scene.add(teaser);
             }
         );
@@ -60,15 +58,14 @@ export class Teaser {
                 );
                 textTeaser.center();
                 let matcapTexture = textureLoader.load('assets/img/darkPurple2.png');
-                let textMaterial = new THREE.MeshMatcapMaterial({
+                let textMaterial = new MeshMatcapMaterial({
                     matcap: matcapTexture,
                     flatShading: true,
                 });
-                let secondText = new THREE.Mesh(textTeaser, textMaterial);
-                secondText.position.y = -2;
+                let secondText = new Mesh(textTeaser, textMaterial);
+                window.innerWidth < 500 ? secondText.position.y = 0 : secondText.position.y = -2;
                 scene.add(secondText);
             }
         )
-
     }
 }
