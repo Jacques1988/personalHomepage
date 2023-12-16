@@ -36,7 +36,7 @@ export class Teaser {
                     flatShading: true,
                 });
                 let teaser = new THREE.Mesh(text, textMaterial);
-                teaser.position.y = 2;
+                teaser.position.y = -1;
                 scene.add(teaser);
             }
         );
@@ -48,7 +48,7 @@ export class Teaser {
                 const textTeaser = new TextGeometry(
                     'Ich bin Webentwickler', {
                     font: font,
-                    size: 0.5,
+                    size: 0.35,
                     height: 0.15,
                     curveSegments: 48,
                     bevelEnabled: true,
@@ -65,7 +65,7 @@ export class Teaser {
                     flatShading: true,
                 });
                 let secondText = new THREE.Mesh(textTeaser, textMaterial);
-
+                secondText.position.y = -2;
                 scene.add(secondText);
             }
         )
