@@ -1,17 +1,21 @@
 import * as THREE from 'three';
 import { sizes } from './sizes';
-import { Teaser } from './teaser';
+import { Teaser } from './Teaser';
+import { Ring } from './Ring';
+import { StyleLoader } from './StyleLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export class WelcomeTeaser {
+  styleLoader: StyleLoader = new StyleLoader();
   renderer: THREE.WebGLRenderer;
   sizes: sizes;
   camera: THREE.PerspectiveCamera;
   scene: THREE.Scene = new THREE.Scene();
   clock: THREE.Clock = new THREE.Clock();
-  light: THREE.AmbientLight = new THREE.AmbientLight(0xffffff, 0.7);
-  sunLight = new THREE.PointLight(0xffffff, 1000)
+  sunLight = new THREE.DirectionalLight(0xffffff, 0.9)
   teaser: Teaser = new Teaser();
+  ring: Ring = new Ring();
+  ringSurface: string[] = this.styleLoader.loadRingTextures();
   controls: OrbitControls;
 
 
@@ -34,8 +38,8 @@ export class WelcomeTeaser {
     this.settings();
     this.scene.add(
       this.camera,
-      this.light,
       this.sunLight,
+      this.ring.buildRing(this.ringSurface)
     );
   }
 
@@ -43,8 +47,8 @@ export class WelcomeTeaser {
   settings() {
     this.canvas.width = this.sizes.width;
     this.canvas.height = this.sizes.height;
-    this.camera.position.z = 6.5;
-    this.sunLight.position.set(10, 10, 10);
+    this.camera.position.z = 10;
+    this.sunLight.position.set(0, 2, 5);
     this.renderer.setSize(
       this.sizes.width,
       this.sizes.height
@@ -57,7 +61,7 @@ export class WelcomeTeaser {
 
   startScreen = () => {
     let elapsedTime = this.clock.getElapsedTime();
-    console.log(elapsedTime);
+
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(this.startScreen)
   }
