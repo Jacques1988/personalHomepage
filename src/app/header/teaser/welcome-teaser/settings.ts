@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { sizes } from './sizes';
 import { Teaser } from './Teaser';
 import { Ring } from './Ring';
+import { Frame } from './Frame';
 import { StyleLoader } from './StyleLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
@@ -12,10 +13,13 @@ export class WelcomeTeaser {
   camera: THREE.PerspectiveCamera;
   scene: THREE.Scene = new THREE.Scene();
   clock: THREE.Clock = new THREE.Clock();
-  sunLight = new THREE.DirectionalLight(0xffffff, 0.9)
+  sunLight = new THREE.DirectionalLight(0xffffff, 2)
   teaser: Teaser = new Teaser();
   ring: Ring = new Ring();
   ringSurface: string[] = this.styleLoader.loadRingTextures();
+  profileImageFrame = new Frame();
+  profileImage: any = this.styleLoader.loadProfileImage();
+
   controls: OrbitControls;
 
 
@@ -39,7 +43,8 @@ export class WelcomeTeaser {
     this.scene.add(
       this.camera,
       this.sunLight,
-      this.ring.buildRing(this.ringSurface)
+      this.ring.buildRing(this.ringSurface),
+      this.profileImageFrame.buildImageFrame(this.profileImage)
     );
   }
 

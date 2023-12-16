@@ -30,7 +30,7 @@ export class Teaser {
                 }
                 );
                 text.center();
-                let matcapTexture = textureLoader.load('assets/img/violet.png');
+                let matcapTexture = textureLoader.load('assets/img/darkPurple2.png');
                 let textMaterial = new THREE.MeshMatcapMaterial({
                     matcap: matcapTexture,
                     flatShading: true,
@@ -59,7 +59,7 @@ export class Teaser {
                 }
                 );
                 textTeaser.center();
-                let matcapTexture = textureLoader.load('assets/img/violet.png');
+                let matcapTexture = textureLoader.load('assets/img/darkPurple2.png');
                 let textMaterial = new THREE.MeshMatcapMaterial({
                     matcap: matcapTexture,
                     flatShading: true,

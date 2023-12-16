@@ -17,4 +17,9 @@ export class StyleLoader {
         this.ringTextures.push(AO, BC, height, metallic, normal, roughness);
         return this.ringTextures;
     }
+
+    loadProfileImage() {
+        const profileImage = this.textureLoader.load('assets/img/JacquesLöhr.webp');
+        return profileImage;
+    }
 }
