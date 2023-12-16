@@ -28,7 +28,7 @@ export class Teaser {
                 }
                 );
                 text.center();
-                let matcapTexture = textureLoader.load('assets/img/darkPurple2.png');
+                let matcapTexture = textureLoader.load('assets/img/darkPurple2.webp');
                 let textMaterial = new MeshMatcapMaterial({
                     matcap: matcapTexture,
                     flatShading: true,
@@ -57,7 +57,7 @@ export class Teaser {
                 }
                 );
                 textTeaser.center();
-                let matcapTexture = textureLoader.load('assets/img/darkPurple2.png');
+                let matcapTexture = textureLoader.load('assets/img/darkPurple2.webp');
                 let textMaterial = new MeshMatcapMaterial({
                     matcap: matcapTexture,
                     flatShading: true,
