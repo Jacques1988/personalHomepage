@@ -25,12 +25,12 @@ export class Ring {
         this.ringMaterial.aoMapIntensity = 0.5;
         this.ringMaterial.map = surface[1];
         this.ringMaterial.displacementMap = surface[2];
-        this.ringMaterial.displacementScale = 0.01;
+        this.ringMaterial.displacementScale = 0.03;
         this.ringMaterial.metalnessMap = surface[3];
-        this.ringMaterial.metalness = 1.5;
+        this.ringMaterial.metalness = 0.8;
         this.ringMaterial.normalMap = surface[4];
         this.ringMaterial.roughnessMap = surface[5];
-        this.ringMaterial.roughness = 2;
+        this.ringMaterial.roughness = 1;
 
         this.ringMesh.position.y = 1;
 
