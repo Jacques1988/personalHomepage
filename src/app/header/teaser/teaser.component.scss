@@ -7,5 +7,6 @@
 }
 
 .header-canvas{
-    max-height:100vh;
+    width:100%;
+    max-height:calc(100vh - 64px);
 }

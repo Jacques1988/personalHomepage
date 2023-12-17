@@ -6,10 +6,10 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export class WelcomeTeaser {
   styleLoader: StyleLoader = new StyleLoader();
-  renderer: THREE.WebGLRenderer;
+  renderer: WebGLRenderer;
   sizes: sizes;
-  camera: THREE.PerspectiveCamera;
-  scene: THREE.Scene = new Scene();
+  camera: PerspectiveCamera;
+  scene: Scene = new Scene();
   profileImage: any = this.styleLoader.loadProfileImage();
   sunLight = new DirectionalLight(0xffffff, 2)
   ringComponent: Ring = new Ring(this.scene, this.profileImage);
@@ -33,6 +33,17 @@ export class WelcomeTeaser {
     });
     this.controls = new OrbitControls(this.camera, this.canvas);
 
+    window.addEventListener('resize', () => {
+
+      this.sizes.width = this.canvasContainer.clientWidth;
+      this.sizes.height = this.canvasContainer.clientHeight;
+      this.sizes.aspect = this.canvasContainer.clientWidth / this.canvasContainer.clientHeight;
+      this.camera.aspect = this.sizes.aspect;
+
+      this.updateCamera();
+      this.rendererUpdates();
+    })
+
     this.settings();
     this.scene.add(
       this.camera,
@@ -44,11 +55,12 @@ export class WelcomeTeaser {
   settings() {
 
     if (window.innerWidth < 500) {
-      this.camera.position.z = 15;
+      this.camera.position.z = 18;
       this.ring.position.y = 3;
     } else {
       this.camera.position.z = 10;
     }
+
     this.canvas.width = this.sizes.width;
     this.canvas.height = this.sizes.height;
     this.sunLight.position.set(0, 2, 5);
@@ -64,5 +76,14 @@ export class WelcomeTeaser {
   startScreen = () => {
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(this.startScreen)
+  }
+
+  rendererUpdates() {
+    this.renderer.setSize(this.sizes.width, this.sizes.height);
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  }
+
+  updateCamera() {
+    this.camera.updateProjectionMatrix();
   }
 }

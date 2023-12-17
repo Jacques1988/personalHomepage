@@ -3,13 +3,8 @@
     display:flex;
     justify-content: center;
     align-items:center;
-    max-height:100vh;
     height:calc(100vh - 64px);
     background-color: #e1ebed;
-
-    @media screen and (max-width:880px){
-        background-position-x: -200px;
-    }
 
     &__content-container{
         display:flex;
@@ -17,23 +12,12 @@
         align-items:flex-start;
         width:100%;
         height:100%;
-        padding:0px 0 0 0;
 
         @media screen and (max-width:1150px){
             flex-direction:column;
             align-items: center;
-            padding-top:0;
          }
-
-        @media screen and (max-width:900px){
-            padding-top:0px;
-        }
-
-        @media screen and (max-width:450px){
-            padding: 0;
-        }
     }
-
 
     @media screen and (max-width:1500px){
         padding:0 120px;
