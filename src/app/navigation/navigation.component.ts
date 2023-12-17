@@ -15,20 +15,6 @@ export class NavigationComponent {
 
   constructor() { }
 
-  openResponsiveMenu() {
-    this.menuIsOpen = !this.menuIsOpen;
-    let responsiveMenu = document.getElementById('responsive-menu');
-
-    if (this.menuIsOpen) {
-      responsiveMenu!.style.opacity = '1';
-      responsiveMenu!.style.zIndex = '1000';
-    } else {
-      responsiveMenu!.style.opacity = '0';
-      responsiveMenu!.style.zIndex = '-100';
-    }
-  }
-
-
   scrollToAboutSection() {
     document.getElementById('about-section')!.scrollIntoView(this.scrollOptions);
   }
@@ -44,4 +30,21 @@ export class NavigationComponent {
   scrollToContactSection() {
     document.getElementById('contact')!.scrollIntoView(this.scrollOptions);
   }
+
+
+  openResponsiveMenu() {
+    this.menuIsOpen = !this.menuIsOpen;
+    let responsiveMenu = document.getElementById('responsive-menu');
+
+    if (this.menuIsOpen) {
+      responsiveMenu!.style.opacity = '1';
+      responsiveMenu!.style.zIndex = '1000';
+    } else {
+      responsiveMenu!.style.opacity = '0';
+      responsiveMenu!.style.zIndex = '-100';
+    }
+  }
+
+
+
 }

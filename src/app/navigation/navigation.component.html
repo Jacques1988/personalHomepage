@@ -39,27 +39,28 @@
 
 
 <div id="responsive-menu" class="responsive-navigation">
-    <span (click)=" openResponsiveMenu()" class="responsive-navigation__close-btn close-btn">X</span>
+    <span (click)="openResponsiveMenu()" class="responsive-navigation__close-btn close-btn">X</span>
     <ul class="responsive-navigation__list-container">
 
-        <li class="responsive-navigation__list-container__list-element">
-            <a class="responsive-navigation__list-container__list-element__link" href="#">
-                Home
-            </a>
-        </li>
-        <li class="responsive-navigation__list-container__list-element">
+
+        <li (click)="openResponsiveMenu();scrollToAboutSection()" class="responsive-navigation__list-container__list-element">
             <a class="responsive-navigation__list-container__list-element__link" href="#">
                 Über mich
             </a>
         </li>
-        <li class="responsive-navigation__list-container__list-element">
+        <li (click)="openResponsiveMenu();scrollToSkillsSection()" class="responsive-navigation__list-container__list-element">
             <a class="responsive-navigation__list-container__list-element__link" href="#">
                 Fähigkeiten
             </a>
         </li>
-        <li class="responsive-navigation__list-container__list-element">
+        <li (click)="openResponsiveMenu();scrollToProjectSection()" class="responsive-navigation__list-container__list-element">
             <a class="responsive-navigation__list-container__list-element__link" href="#">
                 Projekte
+            </a>
+        </li>
+        <li (click)="openResponsiveMenu();scrollToContactSection()" class="responsive-navigation__list-container__list-element">
+            <a class="responsive-navigation__list-container__list-element__link" href="#">
+                Kontakt
             </a>
         </li>
     </ul>
