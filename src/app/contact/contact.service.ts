@@ -10,6 +10,8 @@ export class ContactService {
 
   constructor(private httpClient: HttpClient) { }
 
+
+
   sendAnEmail(data: object): Observable<{}> {
     const headers = new HttpHeaders().append('Content-Type', 'application/JSON');
     return this.httpClient.post<any>(this.url, data, { headers: headers })

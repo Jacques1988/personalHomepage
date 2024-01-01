@@ -1,5 +1,56 @@
-
 form{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    max-width:600px;
+    position: relative;
+    border:1px solid #291c3a;
+    border-radius: 8px;
+    box-shadow:10px 10px 10px lightgrey;
+    padding:16px 16px 64px 15px;
+}
+
+.contactform__left-container{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+    width:100%;
+}
+
+.contactform__right-container{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+    width:100%;
+}
+
+/* input{
+    width:300px;
+} */
+
+.textarea{
+    
+    height:200px;
+} 
+
+.send-btn{
+    position:absolute;
+    right:16px;
+    bottom:16px;
+}
+
+mat-form-field{
+    width:400px;
+    margin-bottom:16px;
+}
+
+
+
+
+/* form{
     display:flex;
     justify-content: flex-start;
     align-items:center;
@@ -66,4 +117,4 @@ textarea.ng-invalid.ng-touched{
 .sendmail{
     color:#dccfed;
     font-size:24px;
-}
+} */

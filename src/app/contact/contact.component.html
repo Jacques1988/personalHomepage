@@ -1,32 +1,42 @@
 <div class="section-container section-container--contact">
-    <h1 id="contact" class="section-teaser dark-teaser">Kontakt</h1>
+    <h1 id="contact" class="section-teaser">Kontakt</h1>
     <div id="contactform-container" class="content-container">
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-            <h3 class="dark-teaser">Mail an mich schreiben und eine schnelle Antwort erhalten. So einfach ist das</h3>
-            <div class="input-container">
-                <input placeholder="Dein Name" name="name" type="text" formControlName="userName">
-                <input placeholder="Telefon" name="phone" type="text" formControlName="userPhone">
-            </div>
-            <span class="warn-text" *ngIf="!contactForm.get('userName')?.valid && contactForm.get('userName')!.touched">Bitte einen Namen eingeben</span>
-            <span class="warn-text" *ngIf="!contactForm.get('userPhone')?.valid && contactForm.get('userPhone')!.touched">Bitte eine Telefonnummer eingeben</span>
+            <h3 class="teaser">Mail an mich schreiben und eine schnelle Antwort erhalten.</h3>
+                <mat-form-field >
+                    <mat-label>Name</mat-label>
+                    <input formControlName="userName" matInput >
+                    <mat-error>{{getErrorName()}}</mat-error>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Telefon</mat-label>
+                    <input formControlName="userPhone" matInput >
+                    <mat-error>{{getErrorPhone()}}</mat-error>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input formControlName="userEmail" matInput >
+                    <mat-error>{{getErrorEmail()}}</mat-error>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Betreff</mat-label>
+                    <input formControlName="userSubject" matInput >
+                    <mat-error>{{getErrorSubject()}}</mat-error>
+                </mat-form-field>
 
-            <div class="input-container">
-                <input placeholder="Email" name="email" type="text" formControlName="userEmail">
-                <input placeholder="Betreff" name="subject" type="text" formControlName="userSubject">
-            </div>
-            <span class="warn-text" *ngIf="!contactForm.get('userEmail')?.valid && contactForm.get('userEmail')!.touched">Bitte eine Emailadresse eingeben</span>
-            <span class="warn-text" *ngIf="!contactForm.get('userSubject')?.valid && contactForm.get('userSubject')!.touched">Bitte einen Betreff eingeben</span>
-            <div class="input-container">
-                <textarea placeholder="Deine Nachricht" name="message" formControlName="userMessage"></textarea>
-            </div>
-            <div class="input-container">
-                <input type="checkbox" formControlName="datasec">
-                <span style="padding-top:24px; padding-bottom:24px;" class="dark-teaser">Ich habe die Datenschutzrichtlinien gelesen und bin damit einverstanden das meine Daten zwecks der Kontaktaufnahme von Bluewave-Technologies verwendet werden.</span>
-            </div>
-            <span class="warn-text" *ngIf="!contactForm.get('datasec')?.valid &&contactForm.get('userMessage')?.touched">Bitte akzeptiere die Datenschutzrichtlinien</span>
+                <mat-form-field class="textarea">
+                    <mat-label>Deine Nachricht</mat-label>
+                    <textarea formControlName="userMessage" matInput></textarea>
+                    <mat-error>{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
 
-            <span class="warn-text" *ngIf="!contactForm.get('userMessage')?.valid && contactForm.get('userMessage')!.touched">Bitte überprüfe deine Nachricht</span>
-            <button [disabled]="!contactForm.valid" class="btn" type="submit">Absenden</button>
+                <mat-checkbox (change)="status($event)" formControlName="datasec" class="teaser">Ich habe die Datenschutzrichtlinien gelesen und akzeptiere das meine Daten zur Kontaktaufnahme verwendet werden dürfen.</mat-checkbox>
+                <mat-error *ngIf="showError">{{getErrorDatasec()}}</mat-error>  
+
+            <button (click)="checkDataSecAccepted()" class="send-btn" mat-button>Senden</button>
         </form>
     </div>
 </div>
