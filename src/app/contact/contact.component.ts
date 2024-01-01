@@ -18,7 +18,7 @@ export class ContactComponent {
     'datasec': new FormControl(null, Validators.required)
   })
   showError: boolean = false;
-
+  datasecAccepted: boolean = false;
   constructor(private contactService: ContactService) { }
 
   getErrorName() {
@@ -95,15 +95,24 @@ export class ContactComponent {
   checkDataSecAccepted() {
     if (!this.contactForm.value.datasec) {
       this.showError = true;
+      this.datasecAccepted = false;
       if (this.showError) {
         this.getErrorDatasec();
       }
     } else {
       this.showError = false;
+      this.datasecAccepted = true;
     }
   }
 
   onSubmit() {
+    this.checkDataSecAccepted();
+    if (this.datasecAccepted) {
+      this.send();
+    }
+  }
+
+  send() {
     let contactformContainer = document.getElementById('contactform-container');
     this.contactService.sendAnEmail(this.contactForm.value).subscribe((response: any) => {
       contactformContainer!.innerHTML = `<div class="sendmail">Deine Nachricht wurde erfolgreich versendet! Vielen Dank.`;
