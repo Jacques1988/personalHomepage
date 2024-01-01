@@ -44,7 +44,7 @@ export class Teaser {
             this.fontUrl,
             (font: any) => {
                 const textTeaser = new TextGeometry(
-                    'Ich bin Webentwickler', {
+                    'Ihr Webentwickler', {
                     font: font,
                     size: 0.35,
                     height: 0.15,
