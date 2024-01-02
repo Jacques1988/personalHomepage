@@ -22,6 +22,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PinguinComponent } from './contact/pinguin/pinguin.component';
+import { ContactFormComponent } from './contact/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ProjectsComponent,
     ContactComponent,
     FooterComponent,
+    PinguinComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,

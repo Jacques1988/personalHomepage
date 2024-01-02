@@ -1,0 +1,37 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <h3 class="teaser">Mail an mich schreiben und eine schnelle Antwort erhalten.</h3>
+        <mat-form-field >
+            <mat-label>Name</mat-label>
+            <input formControlName="userName" matInput >
+            <mat-error>{{getErrorName()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Telefon</mat-label>
+            <input formControlName="userPhone" matInput >
+            <mat-error>{{getErrorPhone()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input formControlName="userEmail" matInput >
+            <mat-error>{{getErrorEmail()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Betreff</mat-label>
+            <input formControlName="userSubject" matInput >
+            <mat-error>{{getErrorSubject()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="textarea">
+            <mat-label>Deine Nachricht</mat-label>
+            <textarea formControlName="userMessage" matInput></textarea>
+            <mat-error>{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-checkbox (change)="status($event)" formControlName="datasec" class="teaser">Ich habe die Datenschutzrichtlinien gelesen und akzeptiere das meine Daten zur Kontaktaufnahme verwendet werden dürfen.</mat-checkbox>
+        <mat-error *ngIf="showError">{{getErrorDatasec()}}</mat-error>  
+
+    <button (click)="checkDataSecAccepted()" class="send-btn" mat-button>Senden</button>
+</form>

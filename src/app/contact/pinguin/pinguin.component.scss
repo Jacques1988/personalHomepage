@@ -1,3 +1,16 @@
+:host{
+    width:100%;
+}
+
+.send-mail{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    position:relative;
+}
+
 .pinguin-container{
     display:flex;
     justify-content: center;
