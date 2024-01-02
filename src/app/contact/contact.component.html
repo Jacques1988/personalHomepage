@@ -1,7 +1,7 @@
 <div class="section-container section-container--contact">
     <h1 id="contact" class="section-teaser">Kontakt</h1>
     <div id="contactform-container" class="content-container">
-        <!-- <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <h3 class="teaser">Mail an mich schreiben und eine schnelle Antwort erhalten.</h3>
                 <mat-form-field >
                     <mat-label>Name</mat-label>
@@ -37,34 +37,5 @@
                 <mat-error *ngIf="showError">{{getErrorDatasec()}}</mat-error>  
 
             <button (click)="checkDataSecAccepted()" class="send-btn" mat-button>Senden</button>
-        </form> -->
-        <div class="send-mail">
-            <h3 class="teaser">Der Bringuin rennt sofort los, vielen Dank.</h3>
-            <div class="pinguin-container">
-                <div class="pinguin-container__letter">
-                    <span class="pinguin-container__letter__title">Nachricht von: {{sender}}</span>
-                </div>
-                <div class="pinguin-container__pinguin-body">
-                    <div class="pinguin-container__pinguin-body__inner-left"></div>
-                    <div class="pinguin-container__pinguin-body__inner-right"></div>
-                    <div class="pinguin-container__pinguin-body__eye-left"></div>
-                    <div class="pinguin-container__pinguin-body__eye-right"></div>
-                    <div class="pinguin-container__pinguin-body__beak"></div>
-                    <div class="pinguin-container__pinguin-body__arm-left"></div>
-                    <div class="pinguin-container__pinguin-body__arm-right"></div>
-                    <div class="pinguin-container__pinguin-body__foot-left">
-                        <div class="pinguin-container__pinguin-body__foot-left__toe-inner"></div>
-                        <div class="pinguin-container__pinguin-body__foot-left__toe-mid"></div>
-                        <div class="pinguin-container__pinguin-body__foot-left__toe-outer"></div>
-                    </div>
-                    <div class="pinguin-container__pinguin-body__foot-right">
-                        <div class="pinguin-container__pinguin-body__foot-right__toe-inner"></div>
-                        <div class="pinguin-container__pinguin-body__foot-right__toe-mid"></div>
-                        <div class="pinguin-container__pinguin-body__foot-right__toe-outer"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="background"></div>
-        </div>
-    </div>
+        </form></div>
 </div>

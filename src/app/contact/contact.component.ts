@@ -120,8 +120,36 @@ export class ContactComponent {
 
   send() {
     let contactformContainer = document.getElementById('contactform-container');
+    this.sender = this.contactForm.value.userName;
     this.contactService.sendAnEmail(this.contactForm.value).subscribe((response: any) => {
-      contactformContainer!.innerHTML = `<div class="sendmail">Deine Nachricht wurde erfolgreich versendet! Vielen Dank.</div>`;
+      contactformContainer!.innerHTML = `<div class="send-mail">
+      <h3 class="teaser">Der Bringuin rennt sofort los, vielen Dank.</h3>
+      <div class="pinguin-container">
+          <div class="pinguin-container__letter">
+              <span class="pinguin-container__letter__title">Nachricht von: {{sender}}</span>
+          </div>
+          <div class="pinguin-container__pinguin-body">
+              <div class="pinguin-container__pinguin-body__inner-left"></div>
+              <div class="pinguin-container__pinguin-body__inner-right"></div>
+              <div class="pinguin-container__pinguin-body__eye-left"></div>
+              <div class="pinguin-container__pinguin-body__eye-right"></div>
+              <div class="pinguin-container__pinguin-body__beak"></div>
+              <div class="pinguin-container__pinguin-body__arm-left"></div>
+              <div class="pinguin-container__pinguin-body__arm-right"></div>
+              <div class="pinguin-container__pinguin-body__foot-left">
+                  <div class="pinguin-container__pinguin-body__foot-left__toe-inner"></div>
+                  <div class="pinguin-container__pinguin-body__foot-left__toe-mid"></div>
+                  <div class="pinguin-container__pinguin-body__foot-left__toe-outer"></div>
+              </div>
+              <div class="pinguin-container__pinguin-body__foot-right">
+                  <div class="pinguin-container__pinguin-body__foot-right__toe-inner"></div>
+                  <div class="pinguin-container__pinguin-body__foot-right__toe-mid"></div>
+                  <div class="pinguin-container__pinguin-body__foot-right__toe-outer"></div>
+              </div>
+          </div>
+      </div>
+      <div class="background"></div>
+  </div>`;
     })
   }
 }
