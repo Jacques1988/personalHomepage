@@ -6,7 +6,12 @@ import { MatCheckbox, MatCheckboxChange } from '@angular/material/checkbox';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['../app.component.scss', './contactform.scss', './contact.component.scss']
+  styleUrls: [
+    '../app.component.scss',
+    './contactform.scss',
+    './contact.component.scss',
+    './pinguin.scss'
+  ]
 })
 export class ContactComponent {
   contactForm: FormGroup = new FormGroup({
@@ -19,6 +24,7 @@ export class ContactComponent {
   })
   showError: boolean = false;
   datasecAccepted: boolean = false;
+  sender: string = '';
   constructor(private contactService: ContactService) { }
 
   getErrorName() {
@@ -115,7 +121,7 @@ export class ContactComponent {
   send() {
     let contactformContainer = document.getElementById('contactform-container');
     this.contactService.sendAnEmail(this.contactForm.value).subscribe((response: any) => {
-      contactformContainer!.innerHTML = `<div class="sendmail">Deine Nachricht wurde erfolgreich versendet! Vielen Dank.`;
+      contactformContainer!.innerHTML = `<div class="sendmail">Deine Nachricht wurde erfolgreich versendet! Vielen Dank.</div>`;
     })
   }
 }

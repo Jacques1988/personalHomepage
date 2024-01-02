@@ -27,12 +27,7 @@ form{
     width:100%;
 }
 
-/* input{
-    width:300px;
-} */
-
 .textarea{
-    
     height:200px;
 } 
 
@@ -45,6 +40,14 @@ form{
 mat-form-field{
     width:400px;
     margin-bottom:16px;
+
+    @media screen and (max-width:750px){
+        width: 300px;
+    }
+
+    @media screen and (max-width:750px){
+        width: 280px;
+    }
 }
 
 
