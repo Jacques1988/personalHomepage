@@ -121,9 +121,9 @@ export class ContactFormComponent {
     this.sender = this.contactForm.value.userName;
     this.contactService.sendedMail.next(true);
     this.contactService.setData(this.sender);
-    /* this.contactService.sendAnEmail(this.contactForm.value).subscribe((response: any) => {
+    this.contactService.sendAnEmail(this.contactForm.value).subscribe((response: any) => {
       console.log(response);
-    }) */
+    })
   }
 }
 
