@@ -3,7 +3,7 @@ import { DodecahedronGeometry, MeshStandardMaterial, Mesh } from "three";
 export class HeaderBackground {
     backGroundGeometry = new DodecahedronGeometry(0.75, 3);
     backGroundMaterial = new MeshStandardMaterial({
-        color: 0x8121cf,
+        color: 0x5d00bb,
     });
     background = new Mesh(this.backGroundGeometry, this.backGroundMaterial);
     elementCount = 20;

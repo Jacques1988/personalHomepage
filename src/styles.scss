@@ -9,11 +9,62 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+
+$purple-violet-palette: (
+  50: #f1e6f9,
+  100: #d9c3f1,
+  200: #c19ae8,
+  300: #a86ee0,
+  400: #954bd8,
+  500: #8121d0,
+  600: #771bca,
+  700: #6a0dc1,
+  800: #5d00bb,
+  900: #4700b1,
+  contrast:(
+    50: white,
+    100: white,
+    200: white,
+    300: whitesmoke,
+    400: whitesmoke,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+$ice-palette:(
+  50: #e1ebed,
+    100: #bcccce,
+    200: #93aaac,
+    300: #6b899c,
+    400: #4e7176,
+    500: #315b60,
+    600: #284e52,
+    700: #1b3b3f,
+    800: #0f2a2d,
+    900: #001719,
+    contrast:(
+      50: #4700b1,
+      100: #5d00bb,
+      200: #6a0dc1,
+      300: #771bca,
+      400: #8121d0,
+      500: #8121d0,
+      600: #771bca,
+      700: #6a0dc1,
+      800: #5d00bb,
+      900: #4700b1,
+    )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$personalHomepage-primary: mat.define-palette(mat.$indigo-palette);
-$personalHomepage-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$personalHomepage-primary: mat.define-palette($purple-violet-palette,800,200,800);
+$personalHomepage-accent: mat.define-palette($ice-palette,50,500,800);
 
 // The warn palette is optional (defaults to red).
 $personalHomepage-warn: mat.define-palette(mat.$red-palette);
@@ -49,4 +100,6 @@ img{
   font-family: 'hand-written';
   src: url('./assets/fonts/Dancing_Script/static/DancingScript-Regular.ttf');
 }
+
+
 
