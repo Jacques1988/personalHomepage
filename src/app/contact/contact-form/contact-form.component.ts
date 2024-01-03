@@ -112,7 +112,7 @@ export class ContactFormComponent {
 
   onSubmit() {
     this.checkDataSecAccepted();
-    if (this.datasecAccepted) {
+    if (this.datasecAccepted && this.contactForm.valid) {
       this.send();
     }
   }
